@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/**
+ * Tokens da página. Tema claro fixo: a única inversão é a seção de projetos,
+ * um corte de cor deliberado, não alternância de tema.
+ *
+ * Forma: pill (999px) em tudo que é interativo, 18px em superfície,
+ * 12px em superfície dentro de superfície. Nenhuma outra medida de canto.
+ */
+@theme {
+  --color-paper: #f6f5f1;
+  --color-paper-deep: #efedE8;
+  --color-surface: #ffffff;
+  --color-ink: #17150f;
+  --color-ink-2: rgba(23, 21, 15, 0.62);
+  --color-ink-3: rgba(23, 21, 15, 0.45);
+  --color-line: rgba(23, 21, 15, 0.1);
+  --color-line-soft: rgba(23, 21, 15, 0.07);
+
+  /* accent único da página inteira */
+  --color-accent: #c2410c;
+  --color-accent-deep: #9a3412;
+  /* mesma família, clareada para passar AA sobre a seção escura */
+  --color-accent-light: #f97316;
+
+  --color-night: #17150f;
+  --color-night-2: #211f18;
+  --color-night-line: rgba(246, 245, 241, 0.12);
+  --color-night-text: rgba(246, 245, 241, 0.66);
+
+  --radius-surface: 18px;
+  --radius-inner: 12px;
+
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, Menlo, monospace;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

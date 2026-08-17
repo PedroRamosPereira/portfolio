@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f6f5f1;color:#17150f;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#17150f;text-decoration:none}
+a:hover{color:#4a453a}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+</style>
+</helmet>
+
+<div style="width:100%;overflow-x:hidden">
+
+  <header style="position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:rgba(246,245,241,.82);border-bottom:1px solid rgba(23,21,15,.08)">
+    <div style="max-width:1680px;margin:0 auto;padding:clamp(14px,1.4vw,22px) clamp(18px,4vw,64px);display:flex;align-items:center;gap:clamp(16px,3vw,48px)">
+      <a href="#topo" style="display:flex;align-items:center;gap:10px;flex:none">
+        <span style="width:26px;height:26px;border-radius:8px;background:{{ accent }};display:block"></span>
+        <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(15px,1.1vw,18px);letter-spacing:-.02em">Estúdio<span style="opacity:.45">/Placeholder</span></span>
+      </a>
+      <nav style="display:flex;flex-wrap:wrap;gap:clamp(14px,1.6vw,30px);margin-left:auto;font-size:clamp(13px,.95vw,15px);color:rgba(23,21,15,.62)">
+        <a href="#servicos" style="color:inherit" style-hover="color:#17150f">Serviços</a>
+        <a href="#projetos" style="color:inherit" style-hover="color:#17150f">Projetos</a>
+        <a href="#processo" style="color:inherit" style-hover="color:#17150f">Processo</a>
+        <a href="#contato" style="color:inherit" style-hover="color:#17150f">Contato</a>
+      </nav>
+      <a href="#contato" style="flex:none;padding:10px clamp(14px,1.4vw,22px);border-radius:999px;background:#17150f;color:#f6f5f1;font-size:clamp(13px,.95vw,15px);font-weight:500;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:scale(1.04);box-shadow:0 10px 24px rgba(23,21,15,.22);color:#f6f5f1">Orçamento</a>
+    </div>
+  </header>
+
+  <section id="topo" style="max-width:1680px;margin:0 auto;padding:clamp(48px,7vw,140px) clamp(18px,4vw,64px) clamp(40px,5vw,96px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,4vw,72px);align-items:center">
+    <div style="min-width:0">
+      
+      <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(38px,6.2vw,92px);line-height:.98;letter-spacing:-.035em;margin:clamp(18px,2vw,28px) 0 0;text-wrap:balance">
+        Landing pages que<br><span style="color:{{ accent }}">convertem visitas</span><br>em clientes
+      </h1>
+      <p style="margin:clamp(18px,2vw,28px) 0 0;max-width:52ch;font-size:clamp(15px,1.25vw,20px);line-height:1.55;color:rgba(23,21,15,.62);text-wrap:pretty">
+        Texto placeholder para a proposta de valor. Descreva aqui o resultado que você entrega, para quem, e em quanto tempo — duas ou três linhas bastam.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(24px,2.6vw,36px)">
+        <a href="#projetos" style="padding:clamp(13px,1.1vw,17px) clamp(22px,2vw,32px);border-radius:999px;background:#17150f;color:#f6f5f1;font-size:clamp(14px,1vw,16px);font-weight:500;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:scale(1.04);box-shadow:0 14px 32px rgba(23,21,15,.25);color:#f6f5f1">Ver projetos</a>
+        <a href="#servicos" style="padding:clamp(13px,1.1vw,17px) clamp(22px,2vw,32px);border-radius:999px;border:1px solid rgba(23,21,15,.18);font-size:clamp(14px,1vw,16px);font-weight:500;transition:transform .18s ease,background .18s ease" style-hover="transform:scale(1.04);background:rgba(23,21,15,.05)">Como funciona</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:clamp(16px,2vw,32px);margin-top:clamp(36px,4vw,64px);padding-top:clamp(20px,2vw,28px);border-top:1px solid rgba(23,21,15,.1)">
+        <div><div style="font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,2.4vw,34px);font-weight:600;letter-spacing:-.03em">00</div><div style="font-size:clamp(12px,.85vw,14px);color:rgba(23,21,15,.55);margin-top:4px">Métrica placeholder</div></div>
+        <div><div style="font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,2.4vw,34px);font-weight:600;letter-spacing:-.03em">00</div><div style="font-size:clamp(12px,.85vw,14px);color:rgba(23,21,15,.55);margin-top:4px">Métrica placeholder</div></div>
+        <div><div style="font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,2.4vw,34px);font-weight:600;letter-spacing:-.03em">00</div><div style="font-size:clamp(12px,.85vw,14px);color:rgba(23,21,15,.55);margin-top:4px">Métrica placeholder</div></div>
+      </div>
+    </div>
+
+    <div style="min-width:0;position:relative">
+      <div style="border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 24px 60px rgba(23,21,15,.14),0 2px 6px rgba(23,21,15,.06);border:1px solid rgba(23,21,15,.07)">
+        <div style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#efedE8;border-bottom:1px solid rgba(23,21,15,.08)">
+          <span style="width:10px;height:10px;border-radius:50%;background:rgba(23,21,15,.16);display:block"></span>
+          <span style="width:10px;height:10px;border-radius:50%;background:rgba(23,21,15,.16);display:block"></span>
+          <span style="width:10px;height:10px;border-radius:50%;background:rgba(23,21,15,.16);display:block"></span>
+          <span style="flex:1;margin-left:8px;height:22px;border-radius:999px;background:rgba(23,21,15,.06);display:flex;align-items:center;padding:0 12px;font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(23,21,15,.4)">seusite.com.br</span>
+        </div>
+        <div style="aspect-ratio:4/3;background:repeating-linear-gradient(135deg,#f3f1ec 0 12px,#eceae4 12px 24px);display:flex;align-items:center;justify-content:center">
+          <span style="font-family:ui-monospace,Menlo,monospace;font-size:clamp(11px,.9vw,13px);color:rgba(23,21,15,.42);text-align:center;padding:0 16px">mockup principal<br>1440 × 1080</span>
+        </div>
+      </div>
+      <div style="position:absolute;right:-4%;bottom:-8%;width:min(46%,240px);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 18px 44px rgba(23,21,15,.16);border:1px solid rgba(23,21,15,.07);animation:floaty 6s ease-in-out infinite">
+        <div style="height:22px;background:#efedE8;border-bottom:1px solid rgba(23,21,15,.08)"></div>
+        <div style="aspect-ratio:9/16;background:repeating-linear-gradient(135deg,#f3f1ec 0 10px,#eceae4 10px 20px);display:flex;align-items:center;justify-content:center">
+          <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(23,21,15,.42)">mobile</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos" style="max-width:1680px;margin:0 auto;padding:clamp(48px,6vw,120px) clamp(18px,4vw,64px)">
+    <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between;margin-bottom:clamp(28px,3vw,52px)">
+      <div style="min-width:0">
+        <span style="font-size:clamp(11px,.8vw,13px);letter-spacing:.14em;text-transform:uppercase;color:rgba(23,21,15,.45)">Serviços</span>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,54px);letter-spacing:-.03em;line-height:1.05;margin:10px 0 0;text-wrap:balance">O que entra em cada projeto</h2>
+      </div>
+      <p style="margin:0;max-width:40ch;font-size:clamp(14px,1vw,17px);line-height:1.5;color:rgba(23,21,15,.55);text-wrap:pretty">Texto placeholder de apoio para a seção de serviços.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(14px,1.6vw,24px)">
+      <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+        <article style="background:#fff;border:1px solid rgba(23,21,15,.07);border-radius:18px;padding:clamp(22px,2vw,32px);box-shadow:0 10px 24px rgba(23,21,15,.07);transition:transform .22s ease,box-shadow .22s ease" style-hover="transform:scale(1.03);box-shadow:0 22px 50px rgba(23,21,15,.13)">
+          <span style="display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:13px;background:rgba(23,21,15,.05);color:{{ accent }}">{{ s.icon }}</span>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(17px,1.3vw,22px);letter-spacing:-.02em;margin:18px 0 0">{{ s.title }}</h3>
+          <p style="margin:8px 0 0;font-size:clamp(13px,.95vw,15.5px);line-height:1.55;color:rgba(23,21,15,.58);text-wrap:pretty">{{ s.body }}</p>
+          <div style="margin-top:18px;height:1px;background:rgba(23,21,15,.08)"></div>
+          <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+            <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;padding:4px 9px;border-radius:6px;background:rgba(23,21,15,.05);color:rgba(23,21,15,.5)">tag</span>
+            <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;padding:4px 9px;border-radius:6px;background:rgba(23,21,15,.05);color:rgba(23,21,15,.5)">tag</span>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="projetos" style="background:#17150f;color:#f6f5f1">
+    <div style="max-width:1680px;margin:0 auto;padding:clamp(48px,6vw,120px) clamp(18px,4vw,64px)">
+      <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between;margin-bottom:clamp(28px,3vw,52px)">
+        <div style="min-width:0">
+          <span style="font-size:clamp(11px,.8vw,13px);letter-spacing:.14em;text-transform:uppercase;color:rgba(246,245,241,.45)">Preview de projetos</span>
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,54px);letter-spacing:-.03em;line-height:1.05;margin:10px 0 0;text-wrap:balance">Espaço reservado para os cases</h2>
+        </div>
+        <a href="#contato" style="padding:12px 24px;border-radius:999px;border:1px solid rgba(246,245,241,.25);color:#f6f5f1;font-size:clamp(13px,.95vw,15px);transition:transform .18s ease,background .18s ease" style-hover="transform:scale(1.04);background:rgba(246,245,241,.1);color:#f6f5f1">Solicitar acesso</a>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(16px,2vw,30px)">
+        <sc-for list="{{ projects }}" as="p" hint-placeholder-count="4">
+          <figure style="margin:0;border-radius:16px;overflow:hidden;background:#211f18;border:1px solid rgba(246,245,241,.1);box-shadow:0 16px 40px rgba(0,0,0,.35);transition:transform .24s ease,box-shadow .24s ease" style-hover="transform:scale(1.025);box-shadow:0 30px 70px rgba(0,0,0,.5)">
+            <div style="display:flex;align-items:center;gap:7px;padding:11px 14px;background:rgba(246,245,241,.06);border-bottom:1px solid rgba(246,245,241,.08)">
+              <span style="width:9px;height:9px;border-radius:50%;background:rgba(246,245,241,.22);display:block"></span>
+              <span style="width:9px;height:9px;border-radius:50%;background:rgba(246,245,241,.22);display:block"></span>
+              <span style="width:9px;height:9px;border-radius:50%;background:rgba(246,245,241,.22);display:block"></span>
+              <span style="flex:1;margin-left:8px;height:21px;border-radius:999px;background:rgba(246,245,241,.07);display:flex;align-items:center;padding:0 12px;font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(246,245,241,.4)">{{ p.url }}</span>
+            </div>
+            <div style="aspect-ratio:16/10;background:repeating-linear-gradient(135deg,rgba(246,245,241,.05) 0 12px,rgba(246,245,241,.02) 12px 24px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px">
+              <span style="font-family:ui-monospace,Menlo,monospace;font-size:clamp(11px,.9vw,13px);color:rgba(246,245,241,.4)">{{ p.slot }}</span>
+              <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(246,245,241,.25)">1600 × 1000</span>
+            </div>
+            <figcaption style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px">
+              <span style="font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(14px,1.05vw,17px)">{{ p.name }}</span>
+              <span style="font-size:12px;color:rgba(246,245,241,.45)">{{ p.tag }}</span>
+            </figcaption>
+          </figure>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="processo" style="max-width:1680px;margin:0 auto;padding:clamp(48px,6vw,120px) clamp(18px,4vw,64px)">
+    <span style="font-size:clamp(11px,.8vw,13px);letter-spacing:.14em;text-transform:uppercase;color:rgba(23,21,15,.45)">Processo</span>
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,54px);letter-spacing:-.03em;line-height:1.05;margin:10px 0 clamp(28px,3vw,48px);max-width:18ch;text-wrap:balance">Do briefing ao site no ar</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:clamp(14px,1.6vw,24px)">
+      <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+        <div style="background:#fff;border:1px solid rgba(23,21,15,.07);border-radius:16px;padding:clamp(20px,1.8vw,28px);box-shadow:0 8px 20px rgba(23,21,15,.06);transition:transform .2s ease,box-shadow .2s ease" style-hover="transform:scale(1.03);box-shadow:0 18px 40px rgba(23,21,15,.12)">
+          <span style="display:block;width:28px;height:3px;border-radius:2px;background:{{ accent }}"></span>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(15px,1.15vw,19px);margin:16px 0 0;letter-spacing:-.02em">{{ st.title }}</h3>
+          <p style="margin:8px 0 0;font-size:clamp(13px,.9vw,15px);line-height:1.55;color:rgba(23,21,15,.55);text-wrap:pretty">{{ st.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="contato" style="padding:0 clamp(18px,4vw,64px) clamp(48px,6vw,110px)">
+    <div style="max-width:1680px;margin:0 auto;border-radius:24px;background:#fff;border:1px solid rgba(23,21,15,.08);box-shadow:0 20px 50px rgba(23,21,15,.1);padding:clamp(32px,5vw,88px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(24px,3vw,56px);align-items:center">
+      <div style="min-width:0">
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(28px,3.6vw,56px);letter-spacing:-.035em;line-height:1.02;margin:0;text-wrap:balance">Vamos falar do seu projeto</h2>
+        <p style="margin:16px 0 0;max-width:46ch;font-size:clamp(14px,1.05vw,18px);line-height:1.55;color:rgba(23,21,15,.58);text-wrap:pretty">Texto placeholder para a chamada final. Prazo médio, formato de atendimento, o que o cliente recebe.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+        <a href="#contato" style="text-align:center;padding:clamp(14px,1.2vw,20px);border-radius:14px;background:{{ accent }};color:#fff;font-size:clamp(15px,1.05vw,17px);font-weight:600;transition:transform .18s ease,box-shadow .18s ease" style-hover="transform:scale(1.03);box-shadow:0 16px 36px rgba(23,21,15,.2);color:#fff">Começar um orçamento</a>
+        <a href="#contato" style="text-align:center;padding:clamp(14px,1.2vw,20px);border-radius:14px;border:1px solid rgba(23,21,15,.14);font-size:clamp(15px,1.05vw,17px);font-weight:500;transition:transform .18s ease,background .18s ease" style-hover="transform:scale(1.03);background:rgba(23,21,15,.04)">Ver disponibilidade</a>
+        <span style="text-align:center;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:rgba(23,21,15,.4)">contato@placeholder.com</span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid rgba(23,21,15,.08)">
+    <div style="max-width:1680px;margin:0 auto;padding:clamp(20px,2vw,32px) clamp(18px,4vw,64px);display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;font-size:clamp(12px,.85vw,14px);color:rgba(23,21,15,.45)">
+      <span>© Estúdio/Placeholder</span>
+      <div style="display:flex;flex-wrap:wrap;gap:20px">
+        <a href="#topo" style="color:inherit" style-hover="color:#17150f">Instagram</a>
+        <a href="#topo" style="color:inherit" style-hover="color:#17150f">LinkedIn</a>
+        <a href="#topo" style="color:inherit" style-hover="color:#17150f">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#c2410c&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#c2410c&quot;,&quot;#1d4ed8&quot;,&quot;#0f766e&quot;,&quot;#7c3aed&quot;]},&quot;projectCount&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:4,&quot;min&quot;:2,&quot;max&quot;:4,&quot;tsType&quot;:&quot;number&quot;}}">
+class Component extends DCLogic {
+  icon(paths, extra) {
+    return React.createElement('svg', Object.assign({
+      width: 22, height: 22, viewBox: '0 0 24 24', fill: 'none',
+      stroke: 'currentColor', strokeWidth: 1.75, strokeLinecap: 'round', strokeLinejoin: 'round'
+    }, extra || {}), paths.map((d, i) => React.createElement('path', { key: i, d })));
+  }
+  circle(cx, cy, r) { return React.createElement('circle', { key: 'c' + cx + cy, cx, cy, r }); }
+  renderVals() {
+    const accent = this.props.accent ?? '#c2410c';
+    const lucide = {
+      layout: ['M3 3h18v18H3z', 'M3 9h18', 'M9 21V9'],
+      zap: ['M4 14h7l-1 7 10-11h-7l1-7z'],
+      pen: ['M12 20h9', 'M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z'],
+      search: ['M21 21l-4.3-4.3', 'M17 11a6 6 0 1 1-12 0 6 6 0 0 1 12 0z'],
+      phone: ['M5 2h6v20H5z', 'M11 18H5'],
+      chart: ['M3 3v18h18', 'M7 15l4-5 3 3 5-7']
+    };
+    const svc = [
+      ['layout', 'Landing page sob medida', 'Texto placeholder descrevendo o serviço em uma ou duas linhas.'],
+      ['pen', 'Copy e estrutura', 'Texto placeholder descrevendo o serviço em uma ou duas linhas.'],
+      ['zap', 'Performance e velocidade', 'Texto placeholder descrevendo o serviço em uma ou duas linhas.'],
+      ['phone', 'Responsivo de verdade', 'Texto placeholder descrevendo o serviço em uma ou duas linhas.'],
+      ['search', 'SEO técnico básico', 'Texto placeholder descrevendo o serviço em uma ou duas linhas.'],
+      ['chart', 'Medição e testes', 'Texto placeholder descrevendo o serviço em uma ou duas linhas.']
+    ];
+    const services = svc.map(([k, title, body]) => ({
+      title, body,
+      icon: this.icon(lucide[k])
+    }));
+    const projects = [
+      { name: 'Projeto placeholder', tag: 'categoria', url: 'projeto-01.com.br', slot: 'screenshot do projeto' },
+      { name: 'Projeto placeholder', tag: 'categoria', url: 'projeto-02.com.br', slot: 'screenshot do projeto' },
+      { name: 'Projeto placeholder', tag: 'categoria', url: 'projeto-03.com.br', slot: 'screenshot do projeto' },
+      { name: 'Projeto placeholder', tag: 'categoria', url: 'projeto-04.com.br', slot: 'screenshot do projeto' }
+    ].slice(0, this.props.projectCount ?? 4);
+    const steps = [
+      { title: 'Briefing', body: 'Texto placeholder da etapa.' },
+      { title: 'Estrutura', body: 'Texto placeholder da etapa.' },
+      { title: 'Design e build', body: 'Texto placeholder da etapa.' },
+      { title: 'Publicação', body: 'Texto placeholder da etapa.' }
+    ];
+    return { accent, services, projects, steps };
+  }
+}
+</script>
+</body>
+</html>
