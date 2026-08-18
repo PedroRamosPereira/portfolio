@@ -7,7 +7,8 @@ em `design/Portfolio Landing.dc.html`, com os três projetos reais do GitHub com
 
 - Next.js 16 (App Router, Server Components por padrão) + TypeScript
 - Tailwind CSS v4, tokens em `app/globals.css`
-- Motion (`motion/react`) só na entrada por rolagem, isolada em `components/reveal.tsx`
+- Sem biblioteca de animação: a entrada por rolagem é CSS puro (`animation-timeline: view()`),
+  em `components/reveal.tsx` e no `@keyframes revelar` de `app/globals.css`
 - Phosphor Icons
 - Fontes via `next/font`: Space Grotesk (títulos), DM Sans (texto), JetBrains Mono (rótulos)
 
@@ -54,7 +55,18 @@ projetos que escondem as seções até a rolagem.
 | Tipografia | Space Grotesk em título, DM Sans em texto | Duas famílias, hierarquia por peso e tamanho |
 | Forma | pill em interativo, 18px em superfície, 12px dentro de superfície | Uma regra de canto documentada, sem exceção |
 | Tema | claro fixo | A seção de projetos em fundo escuro é um corte de cor único, não alternância |
-| Movimento | entrada por rolagem e escala no hover | `useReducedMotion` desliga tudo; nada em laço infinito |
+| Movimento | entrada por rolagem e escala no hover | Estado padrão é visível; a animação vive dentro de `prefers-reduced-motion: no-preference` |
+
+## Celular
+
+- Abaixo de 640px, herói e cases trocam a captura de tela larga pela captura de celular
+  (`components/device-frames.tsx`). A captura desktop reduzida a 290px é ilegível, e nesses
+  cards a captura é o conteúdo, não enfeite.
+- `viewportFit: "cover"` no `app/layout.tsx` com `env(safe-area-inset-*)` no `body`, para
+  aparelho com entalhe.
+- Alvo de toque mínimo de 44px em botão, item de menu e link de rodapé.
+- `overflow-x: hidden` no `body` como rede de segurança contra rolagem lateral.
+- Testado em 320, 390, 768 e 1024px.
 
 Nenhuma seção usa rótulo em caixa alta acima do título, e nenhuma repete a família de
 layout da anterior: herói dividido, faixa de indicadores, bento de seis células com

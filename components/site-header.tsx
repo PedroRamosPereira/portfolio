@@ -45,7 +45,7 @@ export function SiteHeader() {
           onClick={() => setAberto((v) => !v)}
           aria-expanded={aberto}
           aria-controls="menu-movel"
-          className="ml-auto flex size-10 flex-none items-center justify-center rounded-full border border-line text-ink lg:hidden"
+          className="ml-auto flex size-11 flex-none items-center justify-center rounded-full border border-line text-ink lg:hidden"
         >
           {aberto ? <X size={20} weight="bold" /> : <List size={20} weight="bold" />}
           <span className="sr-only">{aberto ? "Fechar menu" : "Abrir menu"}</span>
@@ -63,7 +63,7 @@ export function SiteHeader() {
                 <a
                   href={l.href}
                   onClick={() => setAberto(false)}
-                  className="block py-3 text-[17px] text-ink"
+                  className="flex min-h-12 items-center text-[17px] text-ink"
                 >
                   {l.label}
                 </a>

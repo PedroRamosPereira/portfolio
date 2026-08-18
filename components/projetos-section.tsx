@@ -1,28 +1,27 @@
-import Image from "next/image";
 import { GithubLogo } from "@phosphor-icons/react/dist/ssr";
 import { projetos, type Projeto } from "@/lib/content";
+import { BrowserFrame, PhoneFrame } from "./device-frames";
 import { Reveal } from "./reveal";
 
 function Moldura({ p, prioridade = false }: { p: Projeto; prioridade?: boolean }) {
+  const alt = `Topo da landing page ${p.nome}, do segmento de ${p.segmento.toLowerCase()}.`;
+
   return (
-    <div className="overflow-hidden rounded-[12px] border border-night-line bg-night-2">
-      <div className="flex items-center gap-2 border-b border-night-line bg-paper/5 px-3.5 py-2.5">
-        <span className="block size-2 rounded-full bg-paper/20" aria-hidden />
-        <span className="block size-2 rounded-full bg-paper/20" aria-hidden />
-        <span className="block size-2 rounded-full bg-paper/20" aria-hidden />
-        <span className="ml-2 flex h-5 flex-1 items-center rounded-full bg-paper/5 px-3 font-mono text-[11px] text-paper/40">
-          {p.url}
-        </span>
+    <div className="min-w-0">
+      {/* Abaixo de 640px a captura de tela larga fica ilegível: entra a de celular. */}
+      <div className="sm:hidden">
+        <PhoneFrame src={p.imagemMobile} alt={alt} tema="escuro" prioridade={prioridade} />
       </div>
-      <Image
-        src={p.imagem}
-        alt={`Topo da landing page ${p.nome}, do segmento de ${p.segmento.toLowerCase()}.`}
-        width={p.largura}
-        height={p.altura}
-        priority={prioridade}
-        sizes="(max-width: 1024px) 100vw, 700px"
-        className="h-auto w-full"
-      />
+      <div className="hidden sm:block">
+        <BrowserFrame
+          src={p.imagem}
+          alt={alt}
+          largura={p.largura}
+          altura={p.altura}
+          url={p.url}
+          tema="escuro"
+        />
+      </div>
     </div>
   );
 }
@@ -61,7 +60,7 @@ function Texto({ p, grande = false }: { p: Projeto; grande?: boolean }) {
         href={p.repo}
         target="_blank"
         rel="noreferrer noopener"
-        className="mt-6 inline-flex items-center gap-2 rounded-full border border-night-line px-5 py-2.5 text-[15px] font-medium text-paper transition-colors duration-200 hover:bg-paper/10"
+        className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-full border border-night-line px-5 py-2.5 text-[15px] font-medium text-paper transition-colors duration-200 hover:bg-paper/10"
       >
         <GithubLogo size={17} weight="bold" />
         Ver código
@@ -85,14 +84,14 @@ export function ProjetosSection() {
 
         <Reveal className="mt-10 lg:mt-16">
           <article className="grid items-center gap-8 lg:grid-cols-[1.15fr_1fr] lg:gap-14">
-            <Moldura p={principal} prioridade />
+            <Moldura p={principal} />
             <Texto p={principal} grande />
           </article>
         </Reveal>
 
         <div className="mt-8 grid gap-8 lg:mt-14 lg:grid-cols-2 lg:gap-10">
           {restantes.map((p, i) => (
-            <Reveal key={p.nome} delay={i * 0.08}>
+            <Reveal key={p.nome} delay={i * 8}>
               <article className="flex h-full flex-col gap-6">
                 <Moldura p={p} />
                 <Texto p={p} />

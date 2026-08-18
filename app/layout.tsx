@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, DM_Sans, JetBrains_Mono } from "next/font/google";
 import { perfil } from "@/lib/content";
 import "./globals.css";
@@ -37,6 +37,15 @@ export const metadata: Metadata = {
     locale: "pt_BR",
   },
   robots: { index: true, follow: true },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  // deixa a página ir até a borda em aparelho com entalhe; o respiro volta
+  // pelas variáveis env(safe-area-inset-*) em globals.css
+  viewportFit: "cover",
+  themeColor: "#f6f5f1",
 };
 
 export default function RootLayout({

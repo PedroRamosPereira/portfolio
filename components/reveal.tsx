@@ -1,31 +1,26 @@
-"use client";
-
-import { motion, useReducedMotion } from "motion/react";
 import type { ReactNode } from "react";
 
 type Props = {
   children: ReactNode;
-  /** atraso em segundos, para escalonar itens de uma mesma grade */
+  /** escalona itens de uma mesma grade, em porcentagem da faixa de rolagem */
   delay?: number;
   className?: string;
 };
 
 /**
- * Entrada por rolagem. Serve à hierarquia: a seção chega depois do título,
- * na ordem de leitura. Quem pede menos movimento recebe a página pronta.
+ * Entrada por rolagem em CSS puro (animation-timeline: view()).
+ *
+ * O padrão do documento é conteúdo visível: quem pede menos movimento, quem usa
+ * navegador sem suporte e qualquer crawler recebem a página inteira. Sem estado,
+ * sem efeito colateral e sem diferença entre servidor e cliente, que era o que
+ * causava erro de hidratação na versão com Motion.
  */
 export function Reveal({ children, delay = 0, className }: Props) {
-  const reduzido = useReducedMotion();
+  const estilo = delay ? ({ "--atraso": `${delay}%` } as React.CSSProperties) : undefined;
 
   return (
-    <motion.div
-      className={className}
-      initial={reduzido ? false : { opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.55, delay, ease: [0.16, 1, 0.3, 1] }}
-    >
+    <div className={className ? `revelar ${className}` : "revelar"} style={estilo}>
       {children}
-    </motion.div>
+    </div>
   );
 }

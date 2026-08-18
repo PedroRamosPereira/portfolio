@@ -32,7 +32,7 @@ function Card({ s, i }: { s: Servico; i: number }) {
   const Icone = icones[s.icone];
   return (
     <Reveal
-      delay={(i % 3) * 0.06}
+      delay={(i % 3) * 6}
       className={largas.has(i) ? "lg:col-span-2" : undefined}
     >
       <article

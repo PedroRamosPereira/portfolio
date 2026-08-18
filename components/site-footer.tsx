@@ -10,14 +10,14 @@ export function SiteFooter() {
           © {ano} {perfil.nome} {perfil.sobrenome}
         </span>
         <div className="flex flex-wrap gap-6">
-          <a href={`mailto:${perfil.email}`} className="transition-colors hover:text-ink">
+          <a href={`mailto:${perfil.email}`} className="flex min-h-11 items-center transition-colors hover:text-ink">
             E-mail
           </a>
           <a
             href={perfil.github}
             target="_blank"
             rel="noreferrer noopener"
-            className="transition-colors hover:text-ink"
+            className="flex min-h-11 items-center transition-colors hover:text-ink"
           >
             GitHub
           </a>

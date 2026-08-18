@@ -49,6 +49,19 @@ body {
   background: var(--color-paper);
   color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
+  /* nenhuma seção pode empurrar a página de lado no celular */
+  overflow-x: hidden;
+  /* entalhe e cantos arredondados em aparelho, com viewportFit: cover */
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* toque no celular: sem realce cinza do WebKit, sem zoom por duplo toque */
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 ::selection {
@@ -60,6 +73,29 @@ body {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
   border-radius: 4px;
+}
+
+/* Entrada por rolagem. Estado padrão: visível. A animação só existe para quem
+   não pediu menos movimento e usa navegador com timeline de rolagem. */
+@keyframes revelar {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .revelar {
+      animation: revelar linear both;
+      animation-timeline: view();
+      animation-range: entry 4% cover calc(16% + var(--atraso, 0%));
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
