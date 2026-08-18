@@ -1,5 +1,9 @@
 # Portfólio · Pedro Ramos Pereira
 
+No ar: https://portfolio-chi-lovat-qqzwvq33c7.vercel.app
+
+Deploy automático na Vercel a cada push na `main`.
+
 Landing page de portfólio para venda de landing pages. Construída a partir do mock
 em `design/Portfolio Landing.dc.html`, com os três projetos reais do GitHub como cases.
 
