@@ -27,21 +27,20 @@ carregam string solta.
 
 ## Capturas dos projetos
 
-`public/projetos/` guarda capturas reais de cada projeto em WebP, feitas do build de produção
-rodando local, em 1600x1000 (desktop) e 430x932 (celular):
+`public/projetos/` guarda capturas reais de cada projeto em WebP, tiradas do site publicado
+na Vercel, em 1600x1000 (desktop) e 430x932 (celular). Clicar na captura abre o site.
 
-| Projeto | Repositório |
-| --- | --- |
-| Nogueira & Sampaio (advocacia) | `PedroRamosPereira/nogueira-sampaio-advocacia` |
-| Clínica Vismara (estética) | `PedroRamosPereira/landing-page-estetica` |
-| Clínica odontológica (whitelabel) | `PedroRamosPereira/Lading-page-odontologia` |
+| Projeto | Repositório | No ar |
+| --- | --- | --- |
+| Clínica Vismara (estética) | `PedroRamosPereira/landing-page-estetica` | https://landing-page-estetica-gray.vercel.app |
+| Nogueira & Sampaio (advocacia) | `PedroRamosPereira/nogueira-sampaio-advocacia` | https://nogueira-sampaio-advocacia.vercel.app |
 
-Para atualizar uma captura, suba o projeto em produção e rode:
+Para atualizar uma captura:
 
 ```bash
 google-chrome --headless=new --hide-scrollbars --force-prefers-reduced-motion \
-  --virtual-time-budget=12000 --window-size=1600,1000 \
-  --screenshot=/tmp/NOME.png http://localhost:PORTA/
+  --virtual-time-budget=20000 --window-size=1600,1000 \
+  --screenshot=/tmp/NOME.png https://ENDERECO-DO-SITE/
 convert /tmp/NOME.png -quality 82 public/projetos/NOME-desktop.webp
 ```
 

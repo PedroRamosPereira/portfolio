@@ -25,7 +25,7 @@ export const hero = {
 };
 
 export const indicadores = [
-  { valor: "03", rotulo: "projetos publicados" },
+  { valor: "02", rotulo: "sites publicados" },
   { valor: "100%", rotulo: "código próprio, sem builder" },
   { valor: "AA", rotulo: "contraste mínimo em todos" },
 ];
@@ -82,7 +82,10 @@ export const servicos: Servico[] = [
 export type Projeto = {
   nome: string;
   segmento: string;
+  /** domínio mostrado na barra da moldura */
   url: string;
+  /** site publicado, aberto ao clicar na captura */
+  link: string;
   repo: string;
   imagem: string;
   imagemMobile: string;
@@ -94,22 +97,10 @@ export type Projeto = {
 
 export const projetos: Projeto[] = [
   {
-    nome: "Nogueira & Sampaio",
-    segmento: "Advocacia",
-    url: "nogueira-sampaio-advocacia",
-    repo: "https://github.com/PedroRamosPereira/nogueira-sampaio-advocacia",
-    imagem: "/projetos/advocacia-desktop.webp",
-    imagemMobile: "/projetos/advocacia-mobile.webp",
-    largura: 1600,
-    altura: 1000,
-    resumo:
-      "Escritório de família e sucessões. Azul sozinho no lugar do dourado que vira clichê na categoria, uma família tipográfica só e formulário que abre o WhatsApp já preenchido.",
-    stack: ["HTML", "CSS", "JS sem framework"],
-  },
-  {
     nome: "Clínica Vismara",
     segmento: "Estética",
-    url: "landing-page-estetica",
+    url: "landing-page-estetica-gray.vercel.app",
+    link: "https://landing-page-estetica-gray.vercel.app",
     repo: "https://github.com/PedroRamosPereira/landing-page-estetica",
     imagem: "/projetos/estetica-desktop.webp",
     imagemMobile: "/projetos/estetica-mobile.webp",
@@ -120,17 +111,18 @@ export const projetos: Projeto[] = [
     stack: ["Next.js 16", "Tailwind v4", "CSS scroll-driven"],
   },
   {
-    nome: "Clínica odontológica",
-    segmento: "Odontologia",
-    url: "lading-page-odontologia",
-    repo: "https://github.com/PedroRamosPereira/Lading-page-odontologia",
-    imagem: "/projetos/odontologia-desktop.webp",
-    imagemMobile: "/projetos/odontologia-mobile.webp",
+    nome: "Nogueira & Sampaio",
+    segmento: "Advocacia",
+    url: "nogueira-sampaio-advocacia.vercel.app",
+    link: "https://nogueira-sampaio-advocacia.vercel.app",
+    repo: "https://github.com/PedroRamosPereira/nogueira-sampaio-advocacia",
+    imagem: "/projetos/advocacia-desktop.webp",
+    imagemMobile: "/projetos/advocacia-mobile.webp",
     largura: 1600,
     altura: 1000,
     resumo:
-      "Base whitelabel: todo o conteúdo mora em um arquivo só, com espaço reservado marcado para foto, CRO e contato. Serve de ponto de partida para qualquer clínica.",
-    stack: ["Next.js 16", "Tailwind v4", "Motion"],
+      "Escritório de família e sucessões. Azul sozinho no lugar do dourado que vira clichê na categoria, uma família tipográfica só e formulário que abre o WhatsApp já preenchido.",
+    stack: ["HTML", "CSS", "JS sem framework"],
   },
 ];
 

@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
-import { hero } from "@/lib/content";
+import { hero, projetos } from "@/lib/content";
 import { PhoneFrame } from "./device-frames";
 
-const alt =
-  "Topo da landing page do escritório Nogueira & Sampaio, com título, chamada e foto da advogada.";
+/** O primeiro case da lista é a vitrine do herói. */
+const destaque = projetos[0];
+const alt = `Topo da landing page ${destaque.nome}, do segmento de ${destaque.segmento.toLowerCase()}.`;
 
 export function Hero() {
   return (
@@ -46,46 +47,55 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Abaixo de 640px a captura de tela larga fica ilegível: entra a de celular. */}
-      <div className="sm:hidden">
-        <PhoneFrame src="/projetos/advocacia-mobile.webp" alt={alt} prioridade />
-      </div>
+      {/* A captura inteira leva ao site publicado. */}
+      <a
+        href={destaque.link}
+        target="_blank"
+        rel="noreferrer noopener"
+        aria-label={`Abrir o site ${destaque.nome} em uma nova aba`}
+        className="block min-w-0 transition-transform duration-300 hover:-translate-y-1"
+      >
+        {/* Abaixo de 640px a captura de tela larga fica ilegível: entra a de celular. */}
+        <div className="sm:hidden">
+          <PhoneFrame src={destaque.imagemMobile} alt={alt} prioridade />
+        </div>
 
-      {/* Moldura de navegador com captura real do projeto publicado, com a versão
-          de celular sobreposta. Só a partir de 640px, onde o texto ainda se lê. */}
-      <div className="relative hidden min-w-0 pb-14 sm:block sm:pb-16 lg:pb-0">
-        <div className="overflow-hidden rounded-[18px] border border-line-soft bg-surface shadow-[0_24px_60px_rgba(23,21,15,0.14),0_2px_6px_rgba(23,21,15,0.06)]">
-          <div className="flex items-center gap-2 border-b border-line-soft bg-paper-deep px-4 py-3">
-            <span className="block size-2.5 rounded-full bg-ink/15" aria-hidden />
-            <span className="block size-2.5 rounded-full bg-ink/15" aria-hidden />
-            <span className="block size-2.5 rounded-full bg-ink/15" aria-hidden />
-            <span className="ml-2 flex h-[22px] min-w-0 flex-1 items-center truncate rounded-full bg-ink/5 px-3 font-mono text-[11px] text-ink-3">
-              nogueira-sampaio-advocacia
-            </span>
+        {/* Moldura de navegador com a captura real, e a versão de celular sobreposta.
+            Só a partir de 640px, onde o texto ainda se lê. */}
+        <div className="relative hidden pb-14 sm:block sm:pb-16 lg:pb-0">
+          <div className="overflow-hidden rounded-[18px] border border-line-soft bg-surface shadow-[0_24px_60px_rgba(23,21,15,0.14),0_2px_6px_rgba(23,21,15,0.06)]">
+            <div className="flex items-center gap-2 border-b border-line-soft bg-paper-deep px-4 py-3">
+              <span className="block size-2.5 rounded-full bg-ink/15" aria-hidden />
+              <span className="block size-2.5 rounded-full bg-ink/15" aria-hidden />
+              <span className="block size-2.5 rounded-full bg-ink/15" aria-hidden />
+              <span className="ml-2 flex h-[22px] min-w-0 flex-1 items-center truncate rounded-full bg-ink/5 px-3 font-mono text-[11px] text-ink-3">
+                {destaque.url}
+              </span>
+            </div>
+            <Image
+              src={destaque.imagem}
+              alt={alt}
+              width={destaque.largura}
+              height={destaque.altura}
+              priority
+              sizes="(max-width: 1024px) 100vw, 620px"
+              className="h-auto w-full"
+            />
           </div>
-          <Image
-            src="/projetos/advocacia-desktop.webp"
-            alt={alt}
-            width={1600}
-            height={1000}
-            priority
-            sizes="(max-width: 1024px) 100vw, 620px"
-            className="h-auto w-full"
-          />
-        </div>
 
-        <div className="absolute -bottom-2 right-0 w-[32%] max-w-[150px] overflow-hidden rounded-[12px] border border-line-soft bg-surface shadow-[0_18px_44px_rgba(23,21,15,0.18)] lg:-bottom-10 lg:-right-8">
-          <div className="h-4 border-b border-line-soft bg-paper-deep" aria-hidden />
-          <Image
-            src="/projetos/advocacia-mobile.webp"
-            alt="A mesma página em tela de celular, com a navegação recolhida."
-            width={430}
-            height={932}
-            sizes="150px"
-            className="h-auto w-full"
-          />
+          <div className="absolute -bottom-2 right-0 w-[32%] max-w-[150px] overflow-hidden rounded-[12px] border border-line-soft bg-surface shadow-[0_18px_44px_rgba(23,21,15,0.18)] lg:-bottom-10 lg:-right-8">
+            <div className="h-4 border-b border-line-soft bg-paper-deep" aria-hidden />
+            <Image
+              src={destaque.imagemMobile}
+              alt="A mesma página em tela de celular, com a navegação recolhida."
+              width={430}
+              height={932}
+              sizes="150px"
+              className="h-auto w-full"
+            />
+          </div>
         </div>
-      </div>
+      </a>
     </section>
   );
 }
