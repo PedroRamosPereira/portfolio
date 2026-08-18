@@ -48,7 +48,7 @@ export function Hero() {
 
       {/* Abaixo de 640px a captura de tela larga fica ilegível: entra a de celular. */}
       <div className="sm:hidden">
-        <PhoneFrame src="/projetos/advocacia-mobile.png" alt={alt} prioridade />
+        <PhoneFrame src="/projetos/advocacia-mobile.webp" alt={alt} prioridade />
       </div>
 
       {/* Moldura de navegador com captura real do projeto publicado, com a versão
@@ -64,7 +64,7 @@ export function Hero() {
             </span>
           </div>
           <Image
-            src="/projetos/advocacia-desktop.png"
+            src="/projetos/advocacia-desktop.webp"
             alt={alt}
             width={1600}
             height={1000}
@@ -77,7 +77,7 @@ export function Hero() {
         <div className="absolute -bottom-2 right-0 w-[32%] max-w-[150px] overflow-hidden rounded-[12px] border border-line-soft bg-surface shadow-[0_18px_44px_rgba(23,21,15,0.18)] lg:-bottom-10 lg:-right-8">
           <div className="h-4 border-b border-line-soft bg-paper-deep" aria-hidden />
           <Image
-            src="/projetos/advocacia-mobile.png"
+            src="/projetos/advocacia-mobile.webp"
             alt="A mesma página em tela de celular, com a navegação recolhida."
             width={430}
             height={932}

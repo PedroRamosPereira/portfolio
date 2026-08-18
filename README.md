@@ -27,7 +27,7 @@ carregam string solta.
 
 ## Capturas dos projetos
 
-`public/projetos/` guarda capturas reais de cada projeto, feitas do build de produção
+`public/projetos/` guarda capturas reais de cada projeto em WebP, feitas do build de produção
 rodando local, em 1600x1000 (desktop) e 430x932 (celular):
 
 | Projeto | Repositório |
@@ -41,7 +41,8 @@ Para atualizar uma captura, suba o projeto em produção e rode:
 ```bash
 google-chrome --headless=new --hide-scrollbars --force-prefers-reduced-motion \
   --virtual-time-budget=12000 --window-size=1600,1000 \
-  --screenshot=public/projetos/NOME-desktop.png http://localhost:PORTA/
+  --screenshot=/tmp/NOME.png http://localhost:PORTA/
+convert /tmp/NOME.png -quality 82 public/projetos/NOME-desktop.webp
 ```
 
 O `--force-prefers-reduced-motion` é o que impede a captura de sair em branco nos

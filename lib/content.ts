@@ -98,8 +98,8 @@ export const projetos: Projeto[] = [
     segmento: "Advocacia",
     url: "nogueira-sampaio-advocacia",
     repo: "https://github.com/PedroRamosPereira/nogueira-sampaio-advocacia",
-    imagem: "/projetos/advocacia-desktop.png",
-    imagemMobile: "/projetos/advocacia-mobile.png",
+    imagem: "/projetos/advocacia-desktop.webp",
+    imagemMobile: "/projetos/advocacia-mobile.webp",
     largura: 1600,
     altura: 1000,
     resumo:
@@ -111,8 +111,8 @@ export const projetos: Projeto[] = [
     segmento: "Estética",
     url: "landing-page-estetica",
     repo: "https://github.com/PedroRamosPereira/landing-page-estetica",
-    imagem: "/projetos/estetica-desktop.png",
-    imagemMobile: "/projetos/estetica-mobile.png",
+    imagem: "/projetos/estetica-desktop.webp",
+    imagemMobile: "/projetos/estetica-mobile.webp",
     largura: 1600,
     altura: 1000,
     resumo:
@@ -124,8 +124,8 @@ export const projetos: Projeto[] = [
     segmento: "Odontologia",
     url: "lading-page-odontologia",
     repo: "https://github.com/PedroRamosPereira/Lading-page-odontologia",
-    imagem: "/projetos/odontologia-desktop.png",
-    imagemMobile: "/projetos/odontologia-mobile.png",
+    imagem: "/projetos/odontologia-desktop.webp",
+    imagemMobile: "/projetos/odontologia-mobile.webp",
     largura: 1600,
     altura: 1000,
     resumo:
